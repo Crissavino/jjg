@@ -29,7 +29,9 @@ class GetAllFromMongoDBCommandHandler
         $res = $client->get('http://localhost:3000/tags');
         $tags = $res->getBody()->getContents();
 
-        $this->tagRepository->save(json_decode($tags));
+        $uniqueTags = $this->tagRepository->removeRepeated(json_decode($tags));
+
+        $this->tagRepository->save($uniqueTags);
 
         return true;
 
