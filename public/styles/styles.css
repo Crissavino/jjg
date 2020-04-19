@@ -1,0 +1,88 @@
+body {
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	background-color: #ed0c04 !important;
+}
+
+a {
+	color: #00B7FF;
+}
+
+.content {
+	width: 96vw;
+	height: 100vw;
+	margin: auto;
+}
+
+.shadow {
+	-moz-box-shadow:    3px 3px 5px 6px rgba(0,0,0,0.35);;
+	-webkit-box-shadow: 3px 3px 5px 6px rgba(0,0,0,0.35);;
+	box-shadow:         3px 3px 5px 6px rgba(0,0,0,0.35);;
+}
+
+.game-box-nine {
+	display: inline-block;
+	width: 10%;
+	height: 120px;
+	overflow: hidden;
+	background-color: #f4f4f4;
+	margin: 6px;
+	border-radius: 10px;
+}
+
+.game-box {
+	display: inline-block;
+	width: 10%;
+	height: 120px;
+	overflow: hidden;
+	background-color: #f4f4f4;
+	margin: 8px;
+	border-radius: 10px;
+}
+
+.publicity-right-1 {
+	position: absolute;
+	top: 195px;
+	right: 6px;
+	display: inline-block;
+	width: 32%;
+	height: 395px;
+	overflow: hidden;
+	background-color: #f4f4f4;
+	margin: 8px;
+	border-radius: 10px;
+	float: right;
+}
+
+.publicity-right-2 {
+	position: absolute;
+	top: 1280px;
+	right: 6px;
+	display: inline-block;
+	width: 32%;
+	height: 390px;
+	overflow: hidden;
+	background-color: #f4f4f4;
+	margin: 8px;
+	border-radius: 10px;
+	float: right;
+}
+
+.publicity-left-1 {
+	position: absolute;
+	top: 735px;
+	left: 6px;
+	display: inline-block;
+	width: 32%;
+	height: 390px;
+	overflow: hidden;
+	background-color: #f4f4f4;
+	margin: 8px;
+	border-radius: 10px;
+	float: right;
+}
+
+.game-photo-m {
+	display: block;
+	width: 100%;
+	float: left;
+}
