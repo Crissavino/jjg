@@ -12,6 +12,7 @@ class EloquentTagRepository implements TagRepository
     public function save($tags)
     {
         foreach ($tags as $tag) {
+            $tag->uniqueIds[] = $tag->_id;
             $tagDB = [
                 'title' => $tag->title,
                 'uniqueIds' => json_encode($tag->uniqueIds)
@@ -73,5 +74,10 @@ class EloquentTagRepository implements TagRepository
         /** flip it back now to get the original order **/
         return array_reverse($uniques);
 
+    }
+
+    public function getTags()
+    {
+        return Tag::all();
     }
 }

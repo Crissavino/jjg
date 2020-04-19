@@ -145,4 +145,24 @@ class EloquentGameRepository implements GameRepository
         }
 
     }
+
+    public function getGames()
+    {
+        return Game::all();
+    }
+
+    public function saveRelationship($games, $tags)
+    {
+        foreach ($games as $game) {
+            $gameTagsIds = json_decode($game->tags_ids);
+            foreach ($gameTagsIds as $tagId) {
+                foreach ($tags as $tag) {
+                    $uniquesTagsIds = json_decode($tag->uniqueIds);
+                    if (in_array($tagId, $uniquesTagsIds)) {
+                        $game->tags()->attach($tag->id);
+                    }
+                }
+            }
+        }
+    }
 }

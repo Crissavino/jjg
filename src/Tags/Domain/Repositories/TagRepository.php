@@ -8,4 +8,6 @@ interface TagRepository
 
     public function save($tags);
 
+    public function getTags();
+
 }

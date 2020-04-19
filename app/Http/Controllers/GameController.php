@@ -7,7 +7,9 @@ use App\Models\NoLanguageGame;
 use App\Models\SpanishGame;
 use src\Games\Application\UseCases\GetAllFromMongoDB\GetAllFromMongoDBCommandHandler;
 use src\Games\Application\UseCases\SaveAllLanguageGamesInGames\SaveAllLanguageGamesInGamesCommandHandler;
+use src\Games\Application\UseCases\SaveRelationships\SaveRelationshipsCommandHandler;
 use src\Games\Infrastructure\Repositories\EloquentGameRepository;
+use src\Tag\Infrastructure\Repositories\EloquentTagRepository;
 
 class GameController extends Controller
 {
@@ -35,6 +37,24 @@ class GameController extends Controller
         $gameRepository = new EloquentGameRepository();
 
         $handler = (new SaveAllLanguageGamesInGamesCommandHandler($gameRepository))->handle();
+
+        if ($handler) {
+            return response()->json([
+                'Juegos guardados',
+            ]);
+        }
+
+        return response()->json([
+            'Error',
+        ]);
+    }
+
+    public function saveRelationships()
+    {
+        $gameRepository = new EloquentGameRepository();
+        $tagRepository = new EloquentTagRepository();
+
+        $handler = (new SaveRelationshipsCommandHandler($gameRepository, $tagRepository))->handle();
 
         if ($handler) {
             return response()->json([

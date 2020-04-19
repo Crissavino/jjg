@@ -19,4 +19,8 @@ interface GameRepository
     public function getNoLanguageGames();
 
     public function saveInGame($spanishGames, $englishGames, $noLanguageGames);
+
+    public function getGames();
+
+    public function saveRelationship($games, $tags);
 }

@@ -17,6 +17,7 @@ Route::get('/', 'IndexController@show');
 
 Route::get('/games/getFromMongo', 'GameController@getFromMongo');
 Route::get('/games/saveInGames', 'GameController@saveInGames');
+Route::get('/games/saveRelationships', 'GameController@saveRelationships');
 Route::get('/tags/getFromMongo', 'TagController@getFromMongo');
 
 // DASHBOARD
