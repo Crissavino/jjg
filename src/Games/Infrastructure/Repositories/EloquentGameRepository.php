@@ -3,6 +3,7 @@
 namespace src\Games\Infrastructure\Repositories;
 
 use App\Models\EnglishGame;
+use App\Models\Game;
 use App\Models\NoLanguageGame;
 use App\Models\SpanishGame;
 use LanguageDetection\Language;
@@ -106,5 +107,42 @@ class EloquentGameRepository implements GameRepository
         }
 
         return true;
+    }
+
+    public function getSpanishGames()
+    {
+        return SpanishGame::all();
+    }
+
+    public function getEnglishGames()
+    {
+        return EnglishGame::all();
+    }
+
+    public function getNoLanguageGames()
+    {
+        return NoLanguageGame::all();
+    }
+
+    public function saveInGame($spanishGames, $englishGames, $noLanguageGames)
+    {
+        foreach ($spanishGames as $game) {
+            $array = $game->toArray();
+            unset($array['id']);
+            Game::create($array);
+        }
+
+        foreach ($englishGames as $game) {
+            $array = $game->toArray();
+            unset($array['id']);
+            Game::create($array);
+        }
+
+        foreach ($noLanguageGames as $game) {
+            $array = $game->toArray();
+            unset($array['id']);
+            Game::create($array);
+        }
+
     }
 }

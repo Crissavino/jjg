@@ -6,6 +6,7 @@ use App\Models\EnglishGame;
 use App\Models\NoLanguageGame;
 use App\Models\SpanishGame;
 use src\Games\Application\UseCases\GetAllFromMongoDB\GetAllFromMongoDBCommandHandler;
+use src\Games\Application\UseCases\SaveAllLanguageGamesInGames\SaveAllLanguageGamesInGamesCommandHandler;
 use src\Games\Infrastructure\Repositories\EloquentGameRepository;
 
 class GameController extends Controller
@@ -27,6 +28,23 @@ class GameController extends Controller
             'Error',
         ]);
 
+    }
+
+    public function saveInGames()
+    {
+        $gameRepository = new EloquentGameRepository();
+
+        $handler = (new SaveAllLanguageGamesInGamesCommandHandler($gameRepository))->handle();
+
+        if ($handler) {
+            return response()->json([
+                'Juegos guardados',
+            ]);
+        }
+
+        return response()->json([
+            'Error',
+        ]);
     }
 
     public function edit()

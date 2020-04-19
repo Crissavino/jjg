@@ -3,7 +3,7 @@
 namespace src\Tag\Infrastructure\Repositories;
 
 
-use App\Models\SpanishTag;
+use App\Models\Tag;
 use src\Tag\Domain\Repositories\TagRepository;
 
 class EloquentTagRepository implements TagRepository
@@ -16,7 +16,7 @@ class EloquentTagRepository implements TagRepository
                 'title' => $tag->title,
                 'uniqueIds' => json_encode($tag->uniqueIds)
             ];
-            SpanishTag::create($tagDB);
+            Tag::create($tagDB);
         }
 
         return true;
@@ -24,29 +24,54 @@ class EloquentTagRepository implements TagRepository
 
     public function removeRepeated($tags)
     {
+        foreach ($tags as $key => $tag) {
+            $tags[$key]->title = trim($tag->title);
+            $conv = [
+                'á' => 'a',
+                'é' => 'e',
+                'í' => 'i',
+                'ó' => 'o',
+                'ú' => 'u'
+            ];
+
+            $tags[$key]->title = strtr($tag->title, $conv);
+        }
 
         /** flip it to keep the last one instead of the first one **/
-        $array = array_reverse($tags);
+        $uniques = array_reverse($tags);
 
         /** Answer Code begins here **/
 
         // Build temporary array for array_unique
         $tmp = array();
-        foreach($array as $k => $v)
-            $tmp[$k] = $v->title;
+        foreach($uniques as $key => $tag)
+            $tmp[$key] = $tag->title;
 
         // Find duplicates in temporary array
         $tmp = array_unique($tmp);
 
         // Remove the duplicates from original array
-        foreach($array as $k => $v) {
-            if (!array_key_exists($k, $tmp))
-                unset($array[$k]);
+        foreach($uniques as $key => $tag) {
+            if (!array_key_exists($key, $tmp)) {
+                unset($uniques[$key]);
+            } else {
+
+            }
+        }
+
+        foreach ($uniques as $key => $unique) {
+            foreach ($tags as $tag) {
+                if ($unique->title == $tag->title && $unique->_id != $tag->_id) {
+                    foreach ($tag->uniqueIds as $uniqueId) {
+                        $unique->uniqueIds[] = $uniqueId;
+                    }
+                }
+            }
         }
 
         /** Answer Code ends here **/
         /** flip it back now to get the original order **/
-        return array_reverse($array);
+        return array_reverse($uniques);
 
     }
 }

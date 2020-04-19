@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class Tag extends Model
+{
+    protected $fillable = [
+        'title',
+        'uniqueIds'
+    ];
+
+    use SoftDeletes;
+
+    protected $table = 'tags';
+
+    public function games()
+    {
+        return $this->belongsToMany('App\Models\Game');
+    }
+}

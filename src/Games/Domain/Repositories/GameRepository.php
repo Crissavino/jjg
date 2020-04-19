@@ -11,4 +11,12 @@ interface GameRepository
     public function saveNoLanguageGame($game);
 
     public function saveEnglishGame($game);
+
+    public function getSpanishGames();
+
+    public function getEnglishGames();
+
+    public function getNoLanguageGames();
+
+    public function saveInGame($spanishGames, $englishGames, $noLanguageGames);
 }
