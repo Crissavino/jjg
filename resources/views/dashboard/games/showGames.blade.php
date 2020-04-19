@@ -4,7 +4,7 @@
 
 @section('main')
 
-    <h2 class="text-center mt-3">Tags</h2>
+    <h2 class="text-center mt-3">Juegos</h2>
 
     <div class="m-auto col-sm-8 ml-5">
         <table class="table mt-5">
@@ -17,12 +17,12 @@
             </tr>
             </thead>
             <tbody>
-            @foreach ($tags as $tag)
+            @foreach ($games as $game)
                 <tr>
-                    <th>{{ $tag->id }}</th>
-                    <td scope="row">{{ $tag->title }}</td>
+                    <th>{{ $game->id }}</th>
+                    <td scope="row">{{ $game->title }}</td>
                     <td>
-                        <a href="{{route('dashboard/tag/edit', ['id' => $tag->id])}}">
+                        <a href="{{route('dashboard/game/edit', ['id' => $game->id])}}">
                             <i class="fas fa-edit"></i>
                         </a>
                     </td>
@@ -32,7 +32,7 @@
             </tbody>
         </table>
 
-        {{ $tags->links() }}
+        {{ $games->links() }}
 
     </div>
 

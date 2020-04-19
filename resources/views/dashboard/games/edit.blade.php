@@ -24,7 +24,6 @@
             <form class="form col-md-12 mt-5 mb-5" name="form" onsubmit="validateForm()" action="" method="post">
                 @csrf
                 @method('PUT')
-                <input class="d-none" type="text" name="language" value="{{$language}}">
                 <div class="form-group">
                     <label for="">Titulo del juego</label> <span style="color:red">*</span>
                     <input type="text" name="title" class="form-control" placeholder="Título del juego"

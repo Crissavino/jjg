@@ -9,18 +9,11 @@
             <li class="nav-item active">
                 <a class="nav-link" href="{{route('dashboard')}}">Home</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Juegos
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{route('dashboard/englishGames')}}">En ingles</a>
-                    <a class="dropdown-item" href="{{route('dashboard/spanishGames')}}">En espanol</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{route('dashboard/noLanguageGames')}}">Sin idioma</a>
-                </div>
-            </li>
+
             <li class="nav-item active">
+                <a class="nav-link" href="{{route('dashboard/games')}}">Juegos</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{route('dashboard/tags')}}">Tags</a>
             </li>
         </ul>

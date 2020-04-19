@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\EnglishGame;
+use App\Models\Game;
 use App\Models\NoLanguageGame;
 use App\Models\SpanishGame;
 use src\Games\Application\UseCases\GetAllFromMongoDB\GetAllFromMongoDBCommandHandler;
@@ -67,31 +68,27 @@ class GameController extends Controller
         ]);
     }
 
+    public function dashboardIndex()
+    {
+        $games = Game::paginate(20);
+
+        return view('dashboard.games.showGames',
+            [
+                'games'     => $games,
+            ]
+        );
+    }
+
     public function edit()
     {
         $originUrl = request()->headers->get('referer');
         $gameId = intval(request()->id);
 
-        if (strpos($originUrl, 'spanishGames')) {
-            $game = SpanishGame::find($gameId);
-            $language = 'es';
-        }
-
-
-        if (strpos($originUrl, 'englishGames')) {
-            $game = EnglishGame::find($gameId)->get();
-            $language = 'en';
-        }
-
-        if (strpos($originUrl, 'noLanguageGames')) {
-            $game = NoLanguageGame::find($gameId)->get();
-            $language = 'notDefined';
-        }
+        $game = Game::find($gameId);
 
         return view('dashboard.games.edit',
             [
                 'game'     => $game,
-                'language' => $language,
             ]
         );
 
@@ -100,21 +97,7 @@ class GameController extends Controller
     public function update()
     {
         $gameId = request()->id;
-
-        if (request()->language === 'es') {
-            $game = SpanishGame::find($gameId);
-
-        }
-
-        if (request()->language === 'en') {
-            $game = EnglishGame::find($gameId);
-
-        }
-
-        if (request()->language === 'notDefined') {
-            $game = NoLanguageGame::find($gameId);
-
-        }
+        $game = Game::find($gameId);
 
         $data = [
             'title'       => request()->title,
