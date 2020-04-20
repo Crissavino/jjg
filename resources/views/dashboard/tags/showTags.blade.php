@@ -22,11 +22,21 @@
                     <th>{{ $tag->id }}</th>
                     <td scope="row">{{ $tag->title }}</td>
                     <td>
-                        <a href="{{route('dashboard/tag/edit', ['id' => $tag->id])}}">
-                            <i class="fas fa-edit"></i>
+                        <a href="{{route('dashboard/tag/edit', ['id' => $tag->id])}}" style="color: white">
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <i class="fas fa-edit"></i>
+                            </button>
                         </a>
                     </td>
-                    <td><i class="far fa-trash-alt"></i></td>
+                    <td>
+                        <form class="form" name="form" action="{{route('dashboard/tag/delete', ['id' => $tag->id])}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-block">
+                                <i class="far fa-trash-alt"></i>
+                            </button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
             </tbody>

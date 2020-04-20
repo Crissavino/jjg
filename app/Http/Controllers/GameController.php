@@ -101,7 +101,6 @@ class GameController extends Controller
 
         $data = [
             'title'       => request()->title,
-            'iframe'      => request()->iframe,
             'description' => isset(request()->description) ? request()->description : null,
             'instruction' => isset(request()->instruction) ? request()->instruction : null,
             'mostPlayed'  => isset(request()->mostPlayed) ? request()->mostPlayed : null,
@@ -110,7 +109,20 @@ class GameController extends Controller
 
         $game->update($data);
 
-        return redirect('dashboard/')->with('status', 'Juego actualizado');
+        return redirect('dashboard/games')->with('status', 'Juego actualizado');
+
+    }
+
+    public function delete()
+    {
+        $gameId = request()->id;
+        $game = Game::find($gameId);
+
+        $game->delete();
+
+        $mensaje = 'Juego archivado correctamente';
+
+        return redirect('dashboard/games')->with('status', $mensaje);
 
     }
 }

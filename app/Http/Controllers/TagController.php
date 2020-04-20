@@ -65,7 +65,20 @@ class TagController extends Controller
 
         $tag->update($data);
 
-        return redirect('dashboard/')->with('status', 'Tag actualizado');
+        return redirect('dashboard/tags')->with('status', 'Tag actualizado');
+
+    }
+
+    public function delete()
+    {
+        $tagId = request()->id;
+        $tag = Tag::find($tagId);
+
+        $tag->delete();
+
+        $mensaje = 'Tag archivado correctamente';
+
+        return redirect('dashboard/tag')->with('status', $mensaje);
 
     }
 }

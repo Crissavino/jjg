@@ -19,6 +19,7 @@ body {
 
 nav {
 	font-family: 'Nunito', sans-serif;
+	font-weight: 700;
 	background-color: #5cdb95;
 }
 
@@ -28,12 +29,6 @@ a {
 
 .shadow {
 	box-shadow: 0 4px 80px #000;
-	/*-moz-box-shadow:    3px 3px 5px 6px rgba(0,0,0,0.35);*/
-	/*-webkit-box-shadow: 3px 3px 5px 6px rgba(0,0,0,0.35);*/
-	/*box-shadow:         3px 3px 5px 6px rgba(0,0,0,0.35);*/
-	/*-webkit-box-shadow: 0px 0px 37px 66px rgba(225,179,130,1);*/
-	/*-moz-box-shadow: 0px 0px 37px 66px rgba(225,179,130,1);*/
-	/*box-shadow: 0px 0px 37px 66px rgba(225,179,130,1);*/
 }
 
 .games {

@@ -21,7 +21,7 @@
                     </div>
                 @endif
             </div>
-            <form class="form col-md-12 mt-5 mb-5" name="form" onsubmit="validateForm()" action="" method="post">
+            <form class="form col-md-12 mt-5" name="form" onsubmit="validateForm()" action="" method="post">
                 @csrf
                 @method('PUT')
                 <div class="form-group">
@@ -37,16 +37,10 @@
                 <button class="btn btn-secondary btn-block" onclick="showIframe()" id="showButton">Mostrar vista previa</button>
 
                 <div class="form-group">
-                    <label for="">Iframe del juego</label> <span style="color:red">*</span>
-                    <textarea class="form-control" name="iframe" id=""
-                              rows="3">{{$game->iframe}}</textarea>
+                    <label for="">Descripcion del juego</label> <span style="color:red">*</span>
+                    <textarea class="form-control" name="description" id=""
+                              rows="5">{{$game->description}}</textarea>
                 </div>
-
-{{--                <div class="form-group">--}}
-{{--                    <label for="">Descripcion del juego</label> <span style="color:red">*</span>--}}
-{{--                    <textarea class="form-control" name="description" id=""--}}
-{{--                              rows="5">{{$game->description}}</textarea>--}}
-{{--                </div>--}}
 
                 <div class="form-group">
                     <label for="">Instruccion del juego</label> <span style="color:red">*</span>
@@ -86,9 +80,15 @@
                     <label for="">Aca irian los tags</label> <span style="color:red">*</span>
                 </div>
 
-
                 <button type="submit" class="btn btn-primary btn-block">
                     Guardar
+                </button>
+            </form>
+            <form class="form col-md-12 mb-5" name="form" action="{{route('dashboard/game/delete', ['id' => $game->id])}}" method="post">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger btn-block">
+                    Archivar
                 </button>
             </form>
         </div>

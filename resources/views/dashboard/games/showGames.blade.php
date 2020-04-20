@@ -22,11 +22,21 @@
                     <th>{{ $game->id }}</th>
                     <td scope="row">{{ $game->title }}</td>
                     <td>
-                        <a href="{{route('dashboard/game/edit', ['id' => $game->id])}}">
-                            <i class="fas fa-edit"></i>
+                        <a href="{{route('dashboard/game/edit', ['id' => $game->id])}}" style="color: white">
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <i class="fas fa-edit"></i>
+                            </button>
                         </a>
                     </td>
-                    <td><i class="far fa-trash-alt"></i></td>
+                    <td>
+                        <form class="form" name="form" action="{{route('dashboard/game/delete', ['id' => $game->id])}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-block">
+                                <i class="far fa-trash-alt"></i>
+                            </button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
             </tbody>
