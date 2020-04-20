@@ -30,17 +30,23 @@
                            value="{{$game->title}}">
                 </div>
 
+                <div class="iframe text-center d-block">
+                    {!!$game->iframe!!}
+                </div>
+                <button class="btn btn-info btn-block" onclick="hideIframe()" id="hideButton">Ocultar vista previa</button>
+                <button class="btn btn-secondary btn-block" onclick="showIframe()" id="showButton">Mostrar vista previa</button>
+
                 <div class="form-group">
                     <label for="">Iframe del juego</label> <span style="color:red">*</span>
                     <textarea class="form-control" name="iframe" id=""
                               rows="3">{{$game->iframe}}</textarea>
                 </div>
 
-                <div class="form-group">
-                    <label for="">Descripcion del juego</label> <span style="color:red">*</span>
-                    <textarea class="form-control" name="description" id=""
-                              rows="5">{{$game->description}}</textarea>
-                </div>
+{{--                <div class="form-group">--}}
+{{--                    <label for="">Descripcion del juego</label> <span style="color:red">*</span>--}}
+{{--                    <textarea class="form-control" name="description" id=""--}}
+{{--                              rows="5">{{$game->description}}</textarea>--}}
+{{--                </div>--}}
 
                 <div class="form-group">
                     <label for="">Instruccion del juego</label> <span style="color:red">*</span>
@@ -87,4 +93,32 @@
             </form>
         </div>
     </div>
+
 @endsection
+
+<script>
+    function showIframe() {
+      event.preventDefault()
+      const btnShow = document.getElementById('showButton')
+      const divIframe = document.querySelector('iframe')
+      console.log(divIframe);
+
+      if (divIframe.classList.contains('d-none')) {
+        divIframe.classList.remove('d-none')
+      }
+      divIframe.classList.add('d-block')
+
+    }
+
+    function hideIframe() {
+      event.preventDefault()
+      const btnShow = document.getElementById('hideButton')
+      const divIframe = document.querySelector('iframe')
+
+      divIframe.classList.remove('d-block')
+
+      divIframe.classList.add('d-none')
+    }
+
+
+</script>

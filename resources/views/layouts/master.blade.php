@@ -11,7 +11,7 @@
 
 <section class="container-fluid">
 
-    <main style="margin-top: 65px">
+    <main style="margin-top: 65px;">
         @yield('main')
     </main>
 
