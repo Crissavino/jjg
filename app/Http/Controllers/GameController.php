@@ -68,6 +68,26 @@ class GameController extends Controller
         ]);
     }
 
+    public function addHttpsToIframes()
+    {
+        $games = Game::all();
+
+        foreach ($games as $game) {
+            $iframe = $game->iframe;
+            $newIframe = str_replace("http","https",$iframe);
+
+            $dataToUpdate = [
+                'iframe' => $newIframe
+            ];
+
+            $game->update($dataToUpdate);
+        }
+
+        return response()->json([
+            'Iframe actualizado',
+        ]);
+    }
+
     public function dashboardIndex()
     {
         $games = Game::paginate(20);
