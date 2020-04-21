@@ -120,5 +120,16 @@
       divIframe.classList.add('d-none')
     }
 
+    // document.querySelector('iframe').addEventListener('load', () => {
+    //   console.log('iframe cargado');
+    // })
+    setTimeout( () => {
+      addHttps()
+    }, 1000)
+    function addHttps(){
+
+      console.log(window.frames[0].frameElement);
+    }
+
 
 </script>
