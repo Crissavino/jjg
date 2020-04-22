@@ -3,7 +3,13 @@
 	color:  #05386B !important;
 	font-family: 'Nunito', 'Roboto', sans-serif;
 }
+
 body {
+	/* Full screen width and height */
+	width: 100%;
+	min-height: 100vh;
+
+	margin: 0;
 	background-color: #05386B;
 	/*azul marino*/
 	/*#05386B*/
@@ -28,7 +34,7 @@ a {
 }
 
 .shadow {
-	box-shadow: 0 4px 80px #000;
+	/*box-shadow: 0 4px 80px #000;*/
 }
 
 .games {
@@ -41,6 +47,8 @@ a {
 	padding-right: 0;
 	text-align: center;
 	margin: 0;
+
+	perspective: 40px;
 }
 
 .game-box,
@@ -50,8 +58,21 @@ a {
 	overflow: hidden;
 	background-color: #f4f4f4;
 	margin: 0 6px 15px 0;
-	border-radius: 10px;
+	-webkit-filter: drop-shadow(0px 0px 6px rgba(125,220,149,1));
+	filter: drop-shadow(0px 0px 6px rgba(125,220,149,1));
+	border-radius: 5px;
 }
+
+
+/*.game-box:after,*/
+/*.game-box-twelve:after {*/
+/*	content: '';*/
+/*	top:0; left:0; right:0; bottom:0;*/
+/*	position: absolute;*/
+/*	-webkit-box-shadow: 0px 0px 47px 20px rgba(125,220,149,1);*/
+/*	-moz-box-shadow: 0px 0px 47px 20px rgba(125,220,149,1);*/
+/*	box-shadow: 0px 0px 47px 20px rgba(125,220,149,1);*/
+/*}*/
 
 .publicity {
 	padding-right: 10px;

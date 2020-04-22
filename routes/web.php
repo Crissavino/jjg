@@ -13,7 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'IndexController@show');
+Route::get('/', 'PageController@index');
+Route::get('/game/{id}', 'PageController@game')->name('game');
+
+
 
 Route::get('/games/getFromMongo', 'GameController@getFromMongo');
 Route::get('/games/saveInGames', 'GameController@saveInGames');

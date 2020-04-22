@@ -30,7 +30,7 @@
                            value="{{$game->title}}">
                 </div>
 
-                <div class="iframe text-center d-block">
+                <div class="iframe text-center d-block" >
                     {!!$game->iframe!!}
                 </div>
                 <button class="btn btn-info btn-block" onclick="hideIframe()" id="hideButton">Ocultar vista previa</button>
@@ -119,17 +119,5 @@
 
       divIframe.classList.add('d-none')
     }
-
-    // document.querySelector('iframe').addEventListener('load', () => {
-    //   console.log('iframe cargado');
-    // })
-    setTimeout( () => {
-      addHttps()
-    }, 1000)
-    function addHttps(){
-
-      console.log(window.frames[0].frameElement);
-    }
-
 
 </script>
