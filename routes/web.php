@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PageController@index');
-Route::get('/game/{id}', 'PageController@game')->name('game');
+Route::get('/', 'PageController@index')->name('home');
+Route::get('/game/{id}', 'PageController@showGame')->name('game');
 
 
 

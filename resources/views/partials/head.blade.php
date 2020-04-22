@@ -8,5 +8,5 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&family=Roboto&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles/styles.css">
-<link rel="stylesheet" href="styles/animate.css">
+<link rel="stylesheet" href="{{ asset('styles/styles.css') }}">
+<link rel="stylesheet" href="{{ asset('styles/animate.css') }}">

@@ -1,10 +1,10 @@
 @extends('layouts.master')
 
-@section('title', 'Nombre categoria')
+@section('title', $game->title)
 
 @section('main')
     <div class="row">
-
+      <h1 class="text-center" style="color: #7ddc95">{{ $game->title }}</h1>
     </div>
 @endsection
 

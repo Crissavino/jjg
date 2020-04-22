@@ -15,11 +15,21 @@ class PageController extends Controller
         $firstTwelveGames = $games->skip(115)->take(12);
         $secondTwelveGames = $games->skip(127)->take(12);
 
-        return view('index', [
+        return view('pages.index', [
             'games'             => $games,
             'firstNineGames'    => $firstNineGames,
             'firstTwelveGames'  => $firstTwelveGames,
             'secondTwelveGames' => $secondTwelveGames,
+        ]);
+    }
+
+    public function showGame()
+    {
+        $gameId = request()->id;
+        $game = Game::find($gameId);
+
+        return view('pages.game', [
+            'game' => $game,
         ]);
     }
 }

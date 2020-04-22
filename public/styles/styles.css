@@ -1,6 +1,5 @@
 * {
 	box-sizing: border-box;
-	color:  #05386B !important;
 	font-family: 'Nunito', 'Roboto', sans-serif;
 }
 
@@ -11,7 +10,8 @@ body {
 
 	margin: 0;
 	background-color: #05386B;
-	/*azul marino*/
+	/*background: rgb(58,124,190);*/
+	/*background: radial-gradient(circle, rgba(58,124,190,1) 0%, rgba(5,56,107,1) 100%);*/
 	/*#05386B*/
 	/*verde oscuro*/
 	/*#379683*/
@@ -30,7 +30,7 @@ nav {
 }
 
 a {
-	color: #00B7FF;
+	color:  #05386B !important;
 }
 
 .shadow {
@@ -47,7 +47,6 @@ a {
 	padding-right: 0;
 	text-align: center;
 	margin: 0;
-
 	perspective: 40px;
 }
 
@@ -58,8 +57,8 @@ a {
 	overflow: hidden;
 	background-color: #f4f4f4;
 	margin: 0 6px 15px 0;
-	-webkit-filter: drop-shadow(0px 0px 6px rgba(125,220,149,1));
-	filter: drop-shadow(0px 0px 6px rgba(125,220,149,1));
+	-webkit-filter: drop-shadow(0px 0px 4px rgba(125,220,149,1));
+	filter: drop-shadow(0px 0px 4px rgba(125,220,149,1));
 	border-radius: 5px;
 }
 
