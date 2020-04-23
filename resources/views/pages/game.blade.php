@@ -26,15 +26,15 @@
                 {!! $game->iframe !!}
               </div>
 
-              <div class="game-description d-block mt-2">
-                <h3 class="text-center">Instrucciones del juego</h3>
+              <div class="game-description d-block mt-3 mb-3">
+                <h3 class="text-center" style="color: #7ddc95">Instrucciones del juego</h3>
                 <p class="game-text">
                   {{ $game->instruction }}
                 </p>
               </div>
 
-              <div class="game-description d-block mt-2 ">
-                <h3 class="text-center">Descripcion del juego</h3>
+              <div class="game-description d-block mt-2 mb-3">
+                <h3 class="text-center" style="color: #7ddc95">Descripcion del juego</h3>
                 <p class="game-text">
                   {{ $game->description }}
                 </p>
