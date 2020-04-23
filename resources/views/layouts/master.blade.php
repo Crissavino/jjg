@@ -12,9 +12,10 @@
 <section class="container-fluid">
 
     <main style="margin-top: 15px;">
-        @yield('main')
-    </main>
 
+        @yield('main')
+
+    </main>
 
 </section>
 

@@ -39,11 +39,11 @@ a {
 
 .games {
 	width: 100%;
-	/*display: flex;*/
-	display: inline-block;
+	display: flex;
+	/*display: inline-block;*/
 	flex-wrap: wrap;
 	justify-content: space-around;
-	padding-left: 10px;
+	padding-left: 5px;
 	padding-right: 0;
 	text-align: center;
 	margin: 0;
@@ -53,7 +53,7 @@ a {
 .game-box,
 .game-box-twelve {
 	display: inline-block;
-	width: 90px;
+	width: 100px;
 	overflow: hidden;
 	background-color: #f4f4f4;
 	margin: 0 6px 15px 0;
@@ -62,18 +62,12 @@ a {
 	border-radius: 5px;
 }
 
+.publicity-left {
+	padding-right: 0;
+	padding-left: 10px;
+}
 
-/*.game-box:after,*/
-/*.game-box-twelve:after {*/
-/*	content: '';*/
-/*	top:0; left:0; right:0; bottom:0;*/
-/*	position: absolute;*/
-/*	-webkit-box-shadow: 0px 0px 47px 20px rgba(125,220,149,1);*/
-/*	-moz-box-shadow: 0px 0px 47px 20px rgba(125,220,149,1);*/
-/*	box-shadow: 0px 0px 47px 20px rgba(125,220,149,1);*/
-/*}*/
-
-.publicity {
+.publicity-right {
 	padding-right: 10px;
 	padding-left: 0;
 }
@@ -90,286 +84,14 @@ a {
 
 .game-photo-m {
 	display: inline-block;
-	max-width:100%;
+	max-width: 100%;
 	float: left;
 }
 
-@media screen and (min-width: 1385px) {
+@media screen and (max-width: 485px) {
 
-	.game-box,
-	.game-box-twelve{
-		width: 105px;
+	.game-box {
+		width: 90px;
 	}
 
-	.game-box:nth-child(n+153) {
-		display: none;
-	}
-
-	.publicity-block {
-		height: 370px;
-		background-color: #f4f4f4;
-	}
-
-}
-
-@media screen and (max-width: 1385px) and (min-width: 1327px) {
-
-	.game-box,
-	.game-box-twelve{
-		width: 100px;
-	}
-
-	.game-box:nth-child(n+153) {
-		display: none;
-	}
-
-	.publicity-block {
-		height: 355px;
-		background-color: #f4f4f4;
-	}
-
-}
-
-@media screen and (max-width: 1326px) and (min-width: 1251px) {
-
-	.game-box,
-	.game-box-twelve{
-		width: 100px;
-	}
-
-	.game-box:nth-child(n+134) {
-		display: none;
-	}
-
-	.publicity-block {
-		height: 355px;
-		background-color: #f4f4f4;
-	}
-
-	.game-box-twelve:nth-child(8) {
-		display: none;
-	}
-
-}
-
-@media screen and (max-width: 1250px) and (min-width: 1163px) {
-
-	.game-box,
-	.game-box-twelve{
-		width: 100px;
-	}
-
-	.game-box:nth-child(n+134) {
-		display: none;
-	}
-
-	.publicity-block {
-		height: 355px;
-		background-color: #f4f4f4;
-	}
-
-	.game-box-twelve:nth-child(8) {
-		display: none;
-	}
-
-	.game-box-twelve:nth-child(9) {
-		display: none;
-	}
-
-}
-
-@media screen and (max-width: 1162px) and (min-width: 998px) {
-
-	.game-box,
-	.game-box-twelve{
-		width: 100px;
-	}
-
-	.game-box:nth-child(n+115) {
-		display: none;
-	}
-
-	.publicity-block {
-		height: 355px;
-		background-color: #f4f4f4;
-	}
-
-	.game-box-twelve:nth-child(8) {
-		display: none;
-	}
-
-	.game-box-twelve:nth-child(9) {
-		display: none;
-	}
-
-	.game-box-twelve:nth-child(10) {
-		display: none;
-	}
-
-}
-
-@media screen and (max-width: 997px) and (min-width: 834px) {
-
-	.game-box,
-	.game-box-twelve{
-		width: 100px;
-	}
-
-	.game-box:nth-child(n+96) {
-		display: none;
-	}
-
-	.publicity-block {
-		height: 355px;
-		background-color: #f4f4f4;
-	}
-
-	.game-box-twelve:nth-child(8) {
-		display: none;
-	}
-
-	.game-box-twelve:nth-child(9) {
-		display: none;
-	}
-
-	.game-box-twelve:nth-child(10) {
-		display: none;
-	}
-
-	.game-box-twelve:nth-child(11) {
-		display: none;
-	}
-
-	.game-box-twelve:nth-child(12) {
-		display: none;
-	}
-
-}
-
-@media screen and (max-width: 833px) and (min-width: 775px) {
-
-	.game-box,
-	.game-box-twelve{
-		width: 100px;
-	}
-
-	.game-box:nth-child(n+77) {
-		display: none;
-	}
-
-	.publicity-block {
-		height: 355px;
-		background-color: #f4f4f4;
-	}
-
-	.game-box-twelve:nth-child(8) {
-		display: none;
-	}
-
-	.game-box-twelve:nth-child(9) {
-		display: none;
-	}
-
-	.game-box-twelve:nth-child(10) {
-		display: none;
-	}
-
-	.game-box-twelve:nth-child(11) {
-		display: none;
-	}
-
-	.game-box-twelve:nth-child(12) {
-		display: none;
-	}
-
-}
-
-@media screen and (max-width: 774px) and (min-width: 669px) {
-
-	.game-box,
-	.game-box-twelve{
-		width: 100px;
-	}
-
-	.game-box:nth-child(n+77) {
-		display: none;
-	}
-
-	.publicity-block {
-		height: 355px;
-		background-color: #f4f4f4;
-	}
-
-}
-
-@media screen and (max-width: 668px) and (min-width: 608px) {
-
-	.game-box,
-	.game-box-twelve{
-		width: 100px;
-	}
-
-	.game-box:nth-child(n+58) {
-		display: none;
-	}
-
-	.publicity-block {
-		height: 355px;
-		background-color: #f4f4f4;
-	}
-
-	.game-box-twelve:nth-child(11) {
-		display: none;
-	}
-
-	.game-box-twelve:nth-child(12) {
-		display: none;
-	}
-
-}
-
-@media screen and (max-width: 607px) and (min-width: 459px) {
-
-	.game-box:nth-child(n+61) {
-		display: none;
-	}
-
-	.publicity-block {
-		height: 345px;
-	}
-
-	.game-box-twelve:nth-child(11) {
-		display: none;
-	}
-
-	.game-box-twelve:nth-child(12) {
-		display: none;
-	}
-}
-
-@media screen and (max-width: 458px) and (min-width: 371px) {
-
-	.game-box:nth-child(n+45) {
-		display: none;
-	}
-
-	.publicity-block {
-		height: 381px;
-	}
-
-}
-
-@media screen and (max-width: 370px) {
-
-	.game-box:nth-child(n+45) {
-		display: none;
-	}
-
-	.publicity-block {
-		height: 381px;
-	}
-
-	.game-box-twelve:nth-child(n+22) {
-		display: none;
-	}
 }
