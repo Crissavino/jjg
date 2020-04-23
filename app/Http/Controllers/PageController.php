@@ -9,7 +9,7 @@ class PageController extends Controller
 {
     public function index()
     {
-        $games = Game::inRandomOrder()->take(180)->get();
+        $games = Game::inRandomOrder()->take(184)->get();
 
         return view('pages.index2', [
             'games'             => $games,
@@ -21,8 +21,17 @@ class PageController extends Controller
         $gameId = request()->id;
         $game = Game::find($gameId);
 
+        $relatedGames = [];
+
+        while (count($relatedGames) < 10) {
+            foreach ($game->tags as $tag) {
+                $relatedGames[] = $tag->games()->inRandomOrder()->first();
+            }
+        }
+
         return view('pages.game', [
             'game' => $game,
+            'relatedGames' => $relatedGames
         ]);
     }
 }
