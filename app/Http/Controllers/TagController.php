@@ -30,7 +30,10 @@ class TagController extends Controller
 
     public function dashboardIndex()
     {
-        $tags = Tag::paginate(20);
+        $tags = Tag::paginate(10);
+
+        $url = $tags->url($tags->currentPage()); // e.g. /some-url?page=1
+        request()->session()->put('previousPage', $url);
 
         return view('dashboard.tags.showTags',
             [
@@ -65,7 +68,7 @@ class TagController extends Controller
 
         $tag->update($data);
 
-        return redirect('dashboard/tags')->with('status', 'Tag actualizado');
+        return redirect(request()->session()->get('previousTagPage'))->with('status', 'Tag actualizado');
 
     }
 

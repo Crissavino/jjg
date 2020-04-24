@@ -4,9 +4,12 @@
 
 @section('main')
 
-    <h2 class="text-center mt-3">Tags</h2>
+    <h2 class="text-center mt-3 mb-3">Tags</h2>
 
     <div class="m-auto col-sm-8 ml-5">
+
+        {{ $tags->links() }}
+
         <table class="table mt-5">
             <thead class="thead-dark">
             <tr>

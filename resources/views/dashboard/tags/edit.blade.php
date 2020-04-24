@@ -6,6 +6,9 @@
     <div class="container">
         <h2 class="text-center mt-3">{{ $tag->title }}</h2>
         <div class="row">
+            <div class="d-block">
+                <a href="{{ Session::get('previousTagPage') }}" class="btn btn-info">Atras</a>
+            </div>
             <div class="col-md-12">
                 @if(count($errors) !== 0)
                     <div class="alert alert-danger" role="alert">

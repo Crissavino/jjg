@@ -4,9 +4,11 @@
 
 @section('main')
 
-    <h2 class="text-center mt-3">Juegos</h2>
+    <h2 class="text-center mt-3 mb-5">Juegos</h2>
 
     <div class="m-auto col-sm-8 ml-5">
+        {{ $games->links() }}
+
         <table class="table mt-5">
             <thead class="thead-dark">
             <tr>

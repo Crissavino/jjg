@@ -6,6 +6,10 @@
     <div class="container">
         <h2 class="text-center mt-3">{{ $game->title }}</h2>
         <div class="row">
+
+            <div class="d-block">
+                <a href="{{ Session::get('previousGamePage') }}" class="btn btn-info">Atras</a>
+            </div>
             <div class="col-md-12">
                 @if(count($errors) !== 0)
                     <div class="alert alert-danger" role="alert">
@@ -24,6 +28,7 @@
             <form class="form col-md-12 mt-5" name="form" onsubmit="validateForm()" action="" method="post">
                 @csrf
                 @method('PUT')
+                <input type="text" hidden value="">
                 <div class="form-group">
                     <label for="">Titulo del juego</label> <span style="color:red">*</span>
                     <input type="text" name="title" class="form-control" placeholder="Título del juego"

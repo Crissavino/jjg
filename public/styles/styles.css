@@ -41,6 +41,9 @@ nav {
 	font-weight: 700;
 	background-color: #5cdb95;
 	max-height: 70px;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(92,219,149,1);
+	-moz-box-shadow: 0px 2px 10px 0px rgba(92,219,149,1);
+	box-shadow: 0px 0px 10px 0px rgba(92,219,149,1);
 }
 
 /*FIN HEADER*/
