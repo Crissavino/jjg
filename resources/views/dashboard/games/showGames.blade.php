@@ -20,26 +20,49 @@
             </thead>
             <tbody>
             @foreach ($games as $game)
-                <tr>
-                    <th>{{ $game->id }}</th>
-                    <td scope="row">{{ $game->title }}</td>
-                    <td>
-                        <a href="{{route('dashboard/game/edit', ['id' => $game->id])}}" style="color: white">
-                            <button type="submit" class="btn btn-primary btn-block">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                        </a>
-                    </td>
-                    <td>
-                        <form class="form" name="form" action="{{route('dashboard/game/delete', ['id' => $game->id])}}" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-block">
-                                <i class="far fa-trash-alt"></i>
-                            </button>
-                        </form>
-                    </td>
-                </tr>
+                @if (!$game->iframeError)
+                    <tr>
+                        <th>{{ $game->id }}</th>
+                        <td scope="row">{{ $game->title }}</td>
+                        <td>
+                            <a href="{{route('dashboard/game/edit', ['id' => $game->id])}}" style="color: white">
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </a>
+                        </td>
+                        <td>
+                            <form class="form" name="form" action="{{route('dashboard/game/delete', ['id' => $game->id])}}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-block">
+                                    <i class="far fa-trash-alt"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                @else
+                    <tr style="opacity: 0.5">
+                        <th>{{ $game->id }}</th>
+                        <td scope="row">{{ $game->title }}</td>
+                        <td>
+                            <a href="{{route('dashboard/game/edit', ['id' => $game->id])}}" style="color: white">
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </a>
+                        </td>
+                        <td>
+                            <form class="form" name="form" action="{{route('dashboard/game/delete', ['id' => $game->id])}}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-block">
+                                    <i class="far fa-trash-alt"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                @endif
             @endforeach
             </tbody>
         </table>

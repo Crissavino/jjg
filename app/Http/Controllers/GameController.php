@@ -94,7 +94,7 @@ class GameController extends Controller
 
         $url = $games->url($games->currentPage()); // e.g. /some-url?page=1
 
-        request()->session()->put('previousPage', $url);
+        request()->session()->put('previousGamePage', $url);
 
         return view('dashboard.games.showGames',
             [
@@ -137,6 +137,18 @@ class GameController extends Controller
 
     }
 
+    public function iframeError()
+    {
+        $gameId = request()->id;
+        $game = Game::find($gameId);
+
+        $game->update([
+            'iframeError' => 1
+        ]);
+
+        return redirect(request()->session()->get('previousGamePage'))->with('status', 'Juego actualizado');
+    }
+
     public function delete()
     {
         $gameId = request()->id;
@@ -146,7 +158,7 @@ class GameController extends Controller
 
         $mensaje = 'Juego archivado correctamente';
 
-        return redirect('dashboard/games')->with('status', $mensaje);
+        return redirect(request()->session()->get('previousGamePage'))->with('status', $mensaje);
 
     }
 }

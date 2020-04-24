@@ -15,7 +15,8 @@ class Game extends Model
         'mostPlayed',
         'topRated',
         'tags_ids',
-        'uniqueIds'
+        'uniqueIds',
+        'iframeError'
     ];
 
     protected $table = 'games';

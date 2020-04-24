@@ -32,6 +32,7 @@ Route::get('/dashboard/game/create', 'GameController@create')->name('dashboard/g
 Route::post('/dashboard/game/create', 'GameController@create')->name('dashboard/game/create');
 Route::get('/dashboard/game/edit/{id?}', 'GameController@edit')->name('dashboard/game/edit');
 Route::put('/dashboard/game/edit/{id}', 'GameController@update');
+Route::put('/dashboard/game/iframeError/{id}', 'GameController@iframeError')->name('iframeError');
 Route::delete('/dashboard/game/delete/{id}', 'GameController@delete')->name('dashboard/game/delete');
 
 Route::get('/dashboard/tags', 'TagController@dashboardIndex')->name('dashboard/tags');

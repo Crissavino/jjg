@@ -33,7 +33,7 @@ class TagController extends Controller
         $tags = Tag::paginate(10);
 
         $url = $tags->url($tags->currentPage()); // e.g. /some-url?page=1
-        request()->session()->put('previousPage', $url);
+        request()->session()->put('previousTagPage', $url);
 
         return view('dashboard.tags.showTags',
             [
@@ -51,7 +51,7 @@ class TagController extends Controller
 
         return view('dashboard.tags.edit',
             [
-                'tag'     => $tag,
+                'tag' => $tag,
             ]
         );
 
@@ -63,7 +63,7 @@ class TagController extends Controller
         $tag = Tag::find($tagId);
 
         $data = [
-            'title'       => request()->title,
+            'title' => request()->title,
         ];
 
         $tag->update($data);

@@ -89,10 +89,17 @@
                     Guardar
                 </button>
             </form>
+            <form class="form col-md-12" name="form" action="{{route('iframeError', ['id' => $game->id])}}" method="post">
+                @csrf
+                @method('PUT')
+                <button type="submit" class="btn btn-danger btn-block">
+                    Error en el iframe
+                </button>
+            </form>
             <form class="form col-md-12 mb-5" name="form" action="{{route('dashboard/game/delete', ['id' => $game->id])}}" method="post">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger btn-block">
+                <button type="submit" class="btn btn-warning btn-block">
                     Archivar
                 </button>
             </form>
