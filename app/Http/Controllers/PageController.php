@@ -23,7 +23,7 @@ class PageController extends Controller
 
         $relatedGames = [];
 
-        if ($game->tags) {
+        if ($game->tags->isNotEmpty()) {
             while (count($relatedGames) < 10) {
                 foreach ($game->tags as $tag) {
                     $relatedGames[] = $tag->games()->inRandomOrder()->first();
