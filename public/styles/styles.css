@@ -129,6 +129,15 @@ iframe {
 	float: left;
 }
 
+.publicity-horizontal {
+	width: 100%;
+	height: 100px;
+	overflow: hidden;
+	background-color: #f4f4f4;
+	border-radius: 10px;
+	margin-bottom: 14px;
+}
+
 .game-photo-m {
 	display: inline-block;
 	max-width: 100%;
