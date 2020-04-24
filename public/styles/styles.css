@@ -1,6 +1,6 @@
 * {
 	box-sizing: border-box;
-	font-family: 'Nunito', 'Roboto', sans-serif;
+	/*font-family: 'Comic Neue', 'Bangers', cursive, 'Roboto', sans-serif;*/
 }
 
 body {
@@ -36,9 +36,10 @@ body {
 }
 
 nav {
-	top: 40px;
-	font-family: 'Nunito', sans-serif;
+	font-family: 'Comic Neue', cursive;
 	font-weight: 700;
+	font-size: 18px;
+	top: 40px;
 	background-color: #5cdb95;
 	max-height: 70px;
 	-webkit-box-shadow: 0px 0px 10px 0px rgba(92,219,149,1);
@@ -87,14 +88,24 @@ iframe {
 }
 
 .game-title {
-	font-weight: 600;
+	font-family: 'Bangers', cursive;
+	font-weight: 400;
 	font-size: 62px;
 	color: #7ddc95
 }
 
+.title-h3 {
+	font-family: 'Bangers', cursive;
+	color: #edf5e1;
+	font-weight: 300;
+	text-align: center;
+}
+
 .game-text {
-	font-weight: 600;
-	font-size: 24px;
+	font-family: 'Roboto', sans-serif;
+	line-height: 2;
+	font-weight: 300;
+	font-size: 18px;
 	color: #edf5e1
 }
 
