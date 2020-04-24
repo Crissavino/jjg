@@ -23,22 +23,39 @@ body {
 	/*#edf5e1*/
 }
 
+/*INICIO HEADER*/
+
+.logo {
+	width: 180px;
+	position: relative;
+	top: 5px;
+}
+
+.logoLink{
+	padding: 0 !important;
+}
+
 nav {
+	top: 40px;
 	font-family: 'Nunito', sans-serif;
 	font-weight: 700;
 	background-color: #5cdb95;
+	max-height: 70px;
 }
 
+/*FIN HEADER*/
+
+.container-fluid {
+	margin-top: 75px;
+}
+
+
 a {
-	color:  #05386B !important;
+	color: #05386B !important;
 }
 
 iframe {
 	border-radius: 10px;
-}
-
-.shadow {
-	/*box-shadow: 0 4px 80px #000;*/
 }
 
 .games {
@@ -61,8 +78,8 @@ iframe {
 	overflow: hidden;
 	background-color: #f4f4f4;
 	margin: 0 6px 15px 0;
-	-webkit-filter: drop-shadow(0px 0px 4px rgba(125,220,149,1));
-	filter: drop-shadow(0px 0px 4px rgba(125,220,149,1));
+	-webkit-filter: drop-shadow(0px 0px 4px rgba(125, 220, 149, 1));
+	filter: drop-shadow(0px 0px 4px rgba(125, 220, 149, 1));
 	border-radius: 5px;
 }
 
@@ -112,12 +129,46 @@ iframe {
 
 }
 
-.MultiCarousel { float: left; overflow: hidden; padding: 15px; width: 100%; position:relative; }
-.MultiCarousel .MultiCarousel-inner { transition: 1s ease all; float: left; }
-.MultiCarousel .MultiCarousel-inner .item { float: left;}
-.MultiCarousel .MultiCarousel-inner .item > div { text-align: center; padding:10px; margin:10px; background:#f1f1f1; color:#666;}
-.MultiCarousel .leftLst, .MultiCarousel .rightLst { position:absolute; border-radius:50%;top:calc(50% - 20px); }
-.MultiCarousel .leftLst { left:0; }
-.MultiCarousel .rightLst { right:0; }
+.MultiCarousel {
+	float: left;
+	overflow: hidden;
+	padding: 15px;
+	width: 100%;
+	position: relative;
+}
 
-.MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none; background:#ccc; }
+.MultiCarousel .MultiCarousel-inner {
+	transition: 1s ease all;
+	float: left;
+}
+
+.MultiCarousel .MultiCarousel-inner .item {
+	float: left;
+}
+
+.MultiCarousel .MultiCarousel-inner .item > div {
+	text-align: center;
+	padding: 10px;
+	margin: 10px;
+	background: #f1f1f1;
+	color: #666;
+}
+
+.MultiCarousel .leftLst, .MultiCarousel .rightLst {
+	position: absolute;
+	border-radius: 50%;
+	top: calc(50% - 20px);
+}
+
+.MultiCarousel .leftLst {
+	left: 0;
+}
+
+.MultiCarousel .rightLst {
+	right: 0;
+}
+
+.MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over {
+	pointer-events: none;
+	background: #ccc;
+}

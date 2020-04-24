@@ -23,11 +23,14 @@ class PageController extends Controller
 
         $relatedGames = [];
 
-        while (count($relatedGames) < 10) {
-            foreach ($game->tags as $tag) {
-                $relatedGames[] = $tag->games()->inRandomOrder()->first();
+        if ($game->tags) {
+            while (count($relatedGames) < 10) {
+                foreach ($game->tags as $tag) {
+                    $relatedGames[] = $tag->games()->inRandomOrder()->first();
+                }
             }
         }
+
 
         return view('pages.game', [
             'game' => $game,

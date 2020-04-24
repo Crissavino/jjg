@@ -16,7 +16,7 @@
             @foreach ($games as $game)
                 <div class="game-box bounceIn shadow p-0 mt-0">
                     <a href="{{route('game', ['id' => $game->id])}}">
-                        <img loading="lazy" class="game-photo-m lazyload flex-fill" src="images/{{$game->title}}.png"
+                        <img loading="lazy" class="game-photo-m lazyload flex-fill" src="{{asset('images/'.$game->title.'.png')}}"
                              alt="">
                     </a>
                 </div>
