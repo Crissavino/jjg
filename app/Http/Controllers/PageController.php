@@ -12,29 +12,28 @@ class PageController extends Controller
         $games = Game::visible()->inRandomOrder()->take(184)->get();
 
         return view('pages.index2', [
-            'games'             => $games,
+            'games' => $games,
         ]);
     }
 
     public function showGame()
     {
-        $gameId = request()->id;
-        $game = Game::find($gameId);
+        $gameSlug = request()->slug;
+        $game = Game::where('slug', $gameSlug)->first();
 
         $relatedGames = [];
 
         if ($game->tags->isNotEmpty()) {
-            while (count($relatedGames) < 10) {
-                foreach ($game->tags as $tag) {
+            foreach ($game->tags as $tag) {
+                while (count($relatedGames) < 10) {
                     $relatedGames[] = $tag->games()->inRandomOrder()->first();
                 }
             }
         }
 
-
         return view('pages.game', [
-            'game' => $game,
-            'relatedGames' => $relatedGames
+            'game'         => $game,
+            'relatedGames' => $relatedGames,
         ]);
     }
 }

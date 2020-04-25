@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'PageController@index')->name('home');
-Route::get('/game/{id}', 'PageController@showGame')->name('game');
+Route::get('/game/{slug}', 'PageController@showGame')->name('game');
+Route::get('/category/{slug}', 'PageController@showCategory')->name('category');
 
 Route::get('/games/getFromMongo', 'GameController@getFromMongo');
 Route::get('/games/saveInGames', 'GameController@saveInGames');

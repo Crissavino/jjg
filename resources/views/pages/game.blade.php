@@ -10,7 +10,7 @@
             <h1 class="text-center d-block game-title">{{ $game->title }}</h1>
             <div class="text-center d-block">
                 @foreach ($game->tags as $tag)
-                    <a href="#" class="badge badge-primary d-inline-block">{{$tag->title}}</a>
+                    <a href="{{route('category', ['slug' => $tag->slug])}}" class="badge badge-primary d-inline-block">{{$tag->title}}</a>
                 @endforeach
             </div>
 
@@ -48,7 +48,7 @@
                             @foreach ($relatedGames as $relatedGame)
                                 <div class="item">
                                     <div class="game-box">
-                                        <a href="{{route('game', ['id' => $relatedGame->id])}}">
+                                        <a href="{{route('game', ['slug' => $relatedGame->slug])}}">
                                             <img loading="lazy" class="lazyload flex-fill"
                                                  src="{{asset('images/'.$relatedGame->title.'.png')}}"
                                                  alt="">
