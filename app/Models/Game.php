@@ -16,7 +16,9 @@ class Game extends Model
         'topRated',
         'tags_ids',
         'uniqueIds',
-        'iframeError'
+        'iframeError',
+        'visible',
+        'slug'
     ];
 
     protected $table = 'games';
@@ -27,4 +29,10 @@ class Game extends Model
     {
         return $this->belongsToMany('App\Models\Tag');
     }
+
+    public function scopeVisible($query, $visible = 1)
+    {
+        return $query->where('games.visible', $visible);
+    }
+
 }

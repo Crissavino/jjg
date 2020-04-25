@@ -1,10 +1,11 @@
 <?php
 
+use App\Models\Game;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddIframeErrorToUsersTable extends Migration
+class AddSlugToGamesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +15,17 @@ class AddIframeErrorToUsersTable extends Migration
     public function up()
     {
         Schema::table('games', function (Blueprint $table) {
-            $table->boolean('iframeError')->default(0);
+            $table->string('slug');
         });
+
+        $games = Game::all();
+        foreach ($games as $game) {
+            $gameSlug = str_replace(' ', '-', strtolower(trim($game->title)));
+            $gameSlug = str_replace('&', '', $gameSlug);
+            $game->update([
+                'slug' => $gameSlug,
+            ]);
+        }
     }
 
     /**
@@ -26,7 +36,7 @@ class AddIframeErrorToUsersTable extends Migration
     public function down()
     {
         Schema::table('games', function (Blueprint $table) {
-            $table->dropColumn('iframeError');
+            $table->dropColumn('slug');
         });
     }
 }

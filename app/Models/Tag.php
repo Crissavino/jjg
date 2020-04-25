@@ -9,7 +9,9 @@ class Tag extends Model
 {
     protected $fillable = [
         'title',
-        'uniqueIds'
+        'uniqueIds',
+        'visible',
+        'slug'
     ];
 
     use SoftDeletes;
@@ -20,4 +22,10 @@ class Tag extends Model
     {
         return $this->belongsToMany('App\Models\Game');
     }
+
+    public function scopeVisible($query, $visible = 1)
+    {
+        return $query->where('tags.visible', $visible);
+    }
+
 }

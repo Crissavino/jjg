@@ -143,7 +143,8 @@ class GameController extends Controller
         $game = Game::find($gameId);
 
         $game->update([
-            'iframeError' => 1
+            'iframeError' => 1,
+            'visible' => 0
         ]);
 
         return redirect(request()->session()->get('previousGamePage'))->with('status', 'Juego actualizado');

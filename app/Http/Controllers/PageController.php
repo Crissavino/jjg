@@ -9,7 +9,7 @@ class PageController extends Controller
 {
     public function index()
     {
-        $games = Game::inRandomOrder()->take(184)->get();
+        $games = Game::visible()->inRandomOrder()->take(184)->get();
 
         return view('pages.index2', [
             'games'             => $games,
