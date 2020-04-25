@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Game;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -34,6 +35,19 @@ class PageController extends Controller
         return view('pages.game', [
             'game'         => $game,
             'relatedGames' => $relatedGames,
+        ]);
+    }
+
+    public function showCategory()
+    {
+        $tagSlug = request()->slug;
+        $tag = Tag::where('slug', $tagSlug)->first();
+
+        $games = $tag->games()->paginate(56);
+
+        return view('pages.category', [
+            'tag'         => $tag,
+            'games' => $games,
         ]);
     }
 }
