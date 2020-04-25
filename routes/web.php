@@ -43,3 +43,7 @@ Route::delete('/dashboard/tag/delete/{id}', 'TagController@delete')->name('dashb
 
 Route::get('/dashboard/searchGame', 'DashboardController@searchGames')->name('dashboard/searchGames');
 Route::get('/dashboard/searchTags', 'DashboardController@searchTags')->name('dashboard/searchTags');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

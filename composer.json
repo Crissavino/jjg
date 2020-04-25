@@ -17,6 +17,7 @@
         "guzzlehttp/guzzle": "~6.0",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
+        "laravel/ui": "^2.0",
         "patrickschur/language-detection": "^3.4",
         "spatie/laravel-sitemap": "^5.7",
         "stichoza/google-translate-php": "^4.1"
