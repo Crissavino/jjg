@@ -47,6 +47,10 @@ body {
 	box-shadow: 0px 0px 10px 0px rgba(92,219,149,1);
 }
 
+.user-icon {
+	width: 30px;
+}
+
 /*FIN HEADER*/
 
 .container-fluid {
@@ -68,8 +72,8 @@ iframe {
 	/*flex-wrap: wrap;*/
 	display: inline-block;
 	justify-content: space-around;
-	padding-left: 5px;
-	padding-right: 0;
+	padding-left: 45px;
+	padding-right: 40;
 	text-align: center;
 	margin: 0;
 	perspective: 40px;
@@ -110,13 +114,13 @@ iframe {
 }
 
 .publicity-left {
-	padding-right: 0;
+	padding-right: 40px;
 	padding-left: 10px;
 }
 
 .publicity-right {
 	padding-right: 10px;
-	padding-left: 0;
+	padding-left: 40px;
 }
 
 .publicity-block {
@@ -135,7 +139,7 @@ iframe {
 	overflow: hidden;
 	background-color: #f4f4f4;
 	border-radius: 10px;
-	margin-bottom: 14px;
+	margin-bottom: 24px;
 }
 
 .game-photo-m {

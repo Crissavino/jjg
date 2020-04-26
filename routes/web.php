@@ -46,4 +46,3 @@ Route::get('/dashboard/searchTags', 'DashboardController@searchTags')->name('das
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');

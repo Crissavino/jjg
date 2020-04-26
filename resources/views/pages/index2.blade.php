@@ -12,7 +12,7 @@
             <div class="publicity-block"></div>
         </div>
 
-        <div class="col-8 games">
+        <div class="col-8 games justify-content-center">
             @foreach ($games as $game)
                 <div class="game-box bounceIn shadow p-0 mt-0">
                     <a href="{{route('game', ['slug' => $game->slug])}}">

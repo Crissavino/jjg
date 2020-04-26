@@ -19,7 +19,7 @@
                     {!! $game->iframe !!}
                 </div>
 
-                <div class="publicity-horizontal">
+                <div class="publicity-horizontal" style="margin-top: 150px;">
 
                 </div>
 
