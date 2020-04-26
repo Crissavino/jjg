@@ -11,7 +11,8 @@ class Tag extends Model
         'title',
         'uniqueIds',
         'visible',
-        'slug'
+        'slug',
+        'numClicks'
     ];
 
     use SoftDeletes;

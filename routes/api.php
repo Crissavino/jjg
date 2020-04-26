@@ -17,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// GAMES
+Route::get('/games', 'ApiController@getAllGames');
+Route::get('/relatedGames/{id}', 'ApiController@getRelatedGames');
+Route::get('/userFavorites/{userId}', 'ApiController@favoritesGames');
+Route::get('/mostPlayed', 'ApiController@mostPlayed');
+Route::get('/recentPlayed', 'ApiController@recentPlayed');
+Route::get('/recentPlayed/{userId}', 'ApiController@recentPlayedByUser');
+Route::get('/indexGames', 'ApiController@indexGames');
+Route::get('/byCategory/{tagId}', 'ApiController@byCategory');

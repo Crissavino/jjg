@@ -18,7 +18,9 @@ class Game extends Model
         'uniqueIds',
         'iframeError',
         'visible',
-        'slug'
+        'slug',
+        'numClicks',
+        'played'
     ];
 
     protected $table = 'games';
@@ -30,9 +32,19 @@ class Game extends Model
         return $this->belongsToMany('App\Models\Tag');
     }
 
+    public function users()
+    {
+        return $this->belongsToMany('App\User');
+    }
+
     public function scopeVisible($query, $visible = 1)
     {
         return $query->where('games.visible', $visible);
+    }
+
+    public function played()
+    {
+        return $this->belongsToMany('App\User', 'played_user')->withTimestamps('created_at', 'updated_at');
     }
 
 }

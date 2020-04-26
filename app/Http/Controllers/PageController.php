@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Game;
 use App\Models\Tag;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -21,6 +22,15 @@ class PageController extends Controller
     {
         $gameSlug = request()->slug;
         $game = Game::where('slug', $gameSlug)->first();
+
+        $game->update([
+            'numClicks' => $game->numClicks + 1,
+            'played' => Carbon::now()
+        ]);
+
+        if (auth()->check()) {
+            $game->played()->attach(auth()->user()->id);
+        }
 
         $relatedGames = [];
 
@@ -42,6 +52,10 @@ class PageController extends Controller
     {
         $tagSlug = request()->slug;
         $tag = Tag::where('slug', $tagSlug)->first();
+
+        $tag->update([
+            'numClicks' => $tag->numClicks + 1
+        ]);
 
         $games = $tag->games()->paginate(56);
 

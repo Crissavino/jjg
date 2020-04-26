@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
 Route::get('/', 'PageController@index')->name('home');
 Route::get('/game/{slug}', 'PageController@showGame')->name('game');
@@ -44,5 +45,4 @@ Route::delete('/dashboard/tag/delete/{id}', 'TagController@delete')->name('dashb
 Route::get('/dashboard/searchGame', 'DashboardController@searchGames')->name('dashboard/searchGames');
 Route::get('/dashboard/searchTags', 'DashboardController@searchTags')->name('dashboard/searchTags');
 
-Auth::routes();
 
