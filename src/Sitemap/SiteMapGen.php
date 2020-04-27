@@ -65,7 +65,7 @@ class SiteMapGen
 
         foreach ($tags as $tag) {
             $this->siteMap->add(
-                Url::create("/category/$tag->slug")
+                Url::create("/categoria/$tag->slug")
                     ->lastUpdate($tag->updated_at->startOfMonth()->format('c'))
                     ->frequency('weekly')
                     ->priority('0.9')
@@ -81,7 +81,7 @@ class SiteMapGen
 
         foreach ($games as $game) {
             $this->siteMap->add(
-                Url::create("/game/$game->slug")
+                Url::create("/juego/$game->slug")
                     ->lastUpdate($game->updated_at->startOfMonth()->format('c'))
                     ->frequency('weekly')
                     ->priority('0.9')
