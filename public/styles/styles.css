@@ -171,6 +171,11 @@ iframe {
 
 .MultiCarousel .MultiCarousel-inner .item {
 	float: left;
+	display: inline-block;
+	width: 105px;
+	overflow: hidden;
+	margin: 0 10px 0 10px;
+	border-radius: 5px;
 }
 
 .MultiCarousel .MultiCarousel-inner .item > div {

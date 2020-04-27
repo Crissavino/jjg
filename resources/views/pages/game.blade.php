@@ -10,7 +10,8 @@
             <h1 class="text-center d-block game-title">{{ $game->title }}</h1>
             <div class="text-center d-block">
                 @foreach ($game->tags as $tag)
-                    <a href="{{route('category', ['slug' => $tag->slug])}}" class="badge badge-primary d-inline-block">{{$tag->title}}</a>
+                    <a href="{{route('category', ['slug' => $tag->slug])}}"
+                       class="badge badge-primary d-inline-block">{{$tag->title}}</a>
                 @endforeach
             </div>
 
@@ -19,18 +20,18 @@
                     {!! $game->iframe !!}
                 </div>
 
-                <div class="publicity-horizontal" style="margin-top: 150px;">
-
-                </div>
-
-                <div class="game-description d-block mt-3 mb-3">
+                <div class="game-description d-block mt-5 mb-3">
                     <h3 class="title-h3" style="">Instrucciones del juego</h3>
                     <p class="game-text mt-3">
                         {{ $game->instruction }}
                     </p>
                 </div>
 
-                <div class="game-description d-block mt-2 mb-3">
+                <div class="publicity-horizontal mb-5" style="margin-top: 60px;">
+
+                </div>
+
+                <div class="game-description d-block mb-5">
                     <h3 class="title-h3">Descripcion del juego</h3>
                     <p class="game-text mt-3">
                         {{ $game->description }}
@@ -44,16 +45,14 @@
                 <div class="related-games mt-5">
                     <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"
                          data-interval="1000">
-                        <div class="MultiCarousel-inner games">
+                        <div class="MultiCarousel-inner">
                             @foreach ($relatedGames as $relatedGame)
                                 <div class="item">
-                                    <div class="game-box">
-                                        <a href="{{route('game', ['slug' => $relatedGame->slug])}}">
-                                            <img loading="lazy" class="lazyload flex-fill"
-                                                 src="{{asset('images/'.$relatedGame->title.'.png')}}"
-                                                 alt="">
-                                        </a>
-                                    </div>
+                                    <a href="{{route('game', ['slug' => $relatedGame->slug])}}">
+                                        <img loading="lazy" class="lazyload flex-fill"
+                                             src="{{asset('images/'.$relatedGame->title.'.png')}}"
+                                             alt="">
+                                    </a>
                                 </div>
                             @endforeach
                         </div>
@@ -76,15 +75,9 @@
 @endsection
 
 <script>
+
   window.onload = () => {
-    $(function() {
-      $('.games > div').hover(
-          function() {
-            $(this).toggleClass('fadeIn');
-          }).mouseout(function() {
-        $(this).removeClass('fadeIn');
-      });
-    });
+
 
     var itemsMainDiv = ('.MultiCarousel');
     var itemsDiv = ('.MultiCarousel-inner');
@@ -183,21 +176,10 @@
 
     // acomodo el iframe
     let iframe = document.getElementsByTagName('iframe')[0];
-    iframe.style.borderRadius = '10px'
+    iframe.style.borderRadius = '10px';
     //  fin de acomode el iframe
   };
 
-  (async () => {
-    if ('loading' in HTMLImageElement.prototype) {
-      const images = document.querySelectorAll('img.lazyload');
-      images.forEach(img => {
-        img.src = img.dataset.src;
-      });
-    } else {
-      // Dynamically import the LazySizes library
-      const lazySizesLib = await import('/lazysizes.min.js');
-      // Initiate LazySizes (reads data-src & class=lazyload)
-      lazySizes.init(); // lazySizes works off a global.
-    }
-  })();
+
+
 </script>

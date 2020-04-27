@@ -20,7 +20,7 @@ class ApiController extends Controller
 
     public function getRelatedGames(Request $request)
     {
-        $gameId = $request->id;
+        $gameId = $request->gameId;
         $game = Game::find($gameId);
 
         $relatedGames = [];

@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 
+Route::get('/vue', 'Controller@probando');
+
 Route::get('/', 'PageController@index')->name('home');
 Route::get('/game/{slug}', 'PageController@showGame')->name('game');
 Route::get('/category/{slug}', 'PageController@showCategory')->name('category');

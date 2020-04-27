@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // GAMES
 Route::get('/games', 'ApiController@getAllGames');
-Route::get('/relatedGames/{id}', 'ApiController@getRelatedGames');
+Route::get('/relatedGames/{gameId}', 'ApiController@getRelatedGames');
 Route::get('/userFavorites/{userId}', 'ApiController@favoritesGames');
 Route::get('/mostPlayed', 'ApiController@mostPlayed');
 Route::get('/recentPlayed', 'ApiController@recentPlayed');

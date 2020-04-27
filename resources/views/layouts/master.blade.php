@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="{{ app()->getLocale() }}>
 <head>
     @include('partials.head')
     <title>Jugando Juegos Gratis - @yield('title')</title>
@@ -9,9 +9,9 @@
     @include('partials.header')
 </header>
 
-<section class="container-fluid">
+<section class='container-fluid'>
 
-    <main style="margin-top: 15px;">
+    <main style='margin-top: 15px;'>
 
         @yield('main')
 
@@ -33,6 +33,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+<script type="text/javascript" src="../../js/app.js"></script>
 
 @include('partials.scripts')
 

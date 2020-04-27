@@ -10,6 +10,5 @@
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 
-
 <link rel="stylesheet" href="{{ asset('styles/styles.css') }}">
 <link rel="stylesheet" href="{{ asset('styles/animate.css') }}">
