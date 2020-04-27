@@ -17,8 +17,8 @@ Auth::routes();
 Route::get('/vue', 'Controller@probando');
 
 Route::get('/', 'PageController@index')->name('home');
-Route::get('/game/{slug}', 'PageController@showGame')->name('game');
-Route::get('/category/{slug}', 'PageController@showCategory')->name('category');
+Route::get('/juego/{slug}', 'PageController@showGame')->name('game');
+Route::get('/categoria/{slug}', 'PageController@showCategory')->name('category');
 
 Route::get('/games/getFromMongo', 'GameController@getFromMongo');
 Route::get('/games/saveInGames', 'GameController@saveInGames');

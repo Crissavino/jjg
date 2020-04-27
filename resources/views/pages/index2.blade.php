@@ -15,8 +15,9 @@
         <div class="col-8 games justify-content-center">
             @foreach ($games as $game)
                 <div class="game-box bounceIn shadow p-0 mt-0">
-                    <a href="{{route('game', ['slug' => $game->slug])}}">
-                        <img loading="lazy" class="game-photo-m lazyload flex-fill" src="{{asset('images/'.$game->title.'.png')}}"
+                    <a href="{{route('juego', ['slug' => $game->slug])}}">
+                        <img loading="lazy" class="game-photo-m lazyload flex-fill"
+                             src="{{asset('images/'.$game->title.'.png')}}"
                              alt="">
                     </a>
                 </div>
@@ -38,11 +39,23 @@
     $(function() {
       $('.games > div').hover(
           function() {
-            $(this).toggleClass('fadeIn')
+            $(this).toggleClass('fadeIn');
           }).mouseout(function() {
-        $(this).removeClass('fadeIn')
+        $(this).removeClass('fadeIn');
       });
+
+      let games = getIndexGames().then(data => console.log(data));
+
+      // get index games
+      async function getIndexGames() {
+        let response = await fetch("{!! route('indexGame')!!}");
+        let data = await response.json();
+        return data;
+      }
+
+      // fin
     });
+
   };
 
   (async () => {

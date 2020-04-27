@@ -25,5 +25,5 @@ Route::get('/userFavorites/{userId}', 'ApiController@favoritesGames');
 Route::get('/mostPlayed', 'ApiController@mostPlayed');
 Route::get('/recentPlayed', 'ApiController@recentPlayed');
 Route::get('/recentPlayed/{userId}', 'ApiController@recentPlayedByUser');
-Route::get('/indexGames', 'ApiController@indexGames');
+Route::get('/indexGames', 'ApiController@indexGames')->name('indexGame');
 Route::get('/byCategory/{tagId}', 'ApiController@byCategory');
